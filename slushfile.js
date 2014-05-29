@@ -23,7 +23,7 @@ gulp.task('default', function(done) {
         default: 'x-custom-element'
     }, {
         name: 'appDescription',
-        message: 'What is the description?'
+        message: 'What is the description?',
         default: 'My custom element is cool.'
     }, {
         name: 'appVersion',
@@ -58,16 +58,15 @@ gulp.task('default', function(done) {
             var d = new Date();
             answers.year = d.getFullYear();
             answers.date = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
-            var files = [__dirname + '/templates/**'];
 
             if (answers.appBoilerplate === 'Polymer') {
-                files.push('!' + __dirname + '/templates/polymer-boilerplate/**');
+                var files = [__dirname + '/templates/polymer-boilerplate/**'];
             } else if (answers.appBoilerplate === 'X-Tag') {
-                files.push('!' + __dirname + '/templates/x-tag-boilerplate/**');
+                var files = [__dirname + '/templates/x-tag-boilerplate/**'];
             } else if (answers.appBoilerplate === 'VannilaJS') {
-                files.push('!' + __dirname + '/templates/vanillajs-boilerplate/**');
+                var files = [__dirname + '/templates/vanillajs-boilerplate/**'];
             } else {
-                files.push('!' + __dirname + '/templates/polymer-boilerplate/**');
+                var files = [__dirname + '/templates/polymer-boilerplate/**'];
             }
             gulp.src(files)
                 .pipe(template(answers))

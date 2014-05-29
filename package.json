@@ -32,9 +32,9 @@
         "slushgenerator",
         "webcomponents",
         "web-components",
-        "custom-elements"
+        "custom-elements",
         "polymer",
-        "x-tag"
+        "x-tag",
         "vannilajs"
     ]
 }
