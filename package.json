@@ -1,0 +1,40 @@
+{
+    "name": "slush-custom-element",
+    "description": "A slush generator of custom elements with Polymer, X-Tag or VannilaJS based in generator-element",
+    "version": "0.0.1",
+    "homepage": "https://github.com/obetomuniz/slush-custom-element",
+    "author": {
+        "name": "Beto Muniz",
+        "email": "contato@betomuniz.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/obetomuniz/slush-custom-element.git"
+    },
+    "bugs": {
+        "url": "https://github.com/obetomuniz/slush-custom-element/issues"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://github.com/obetomuniz/slush-custom-element/blob/master/LICENSE"
+    }],
+    "main": "slushfile.js",
+    "dependencies": {
+        "gulp": "^3.6.2",
+        "gulp-template": "^0.1.1",
+        "gulp-install": "^0.1.4",
+        "gulp-conflict": "^0.1.1",
+        "gulp-rename": "^1.2.0",
+        "underscore.string": "^2.3.3",
+        "inquirer": "^0.4.1"
+    },
+    "keywords": [
+        "slushgenerator",
+        "webcomponents",
+        "web-components",
+        "custom-elements"
+        "polymer",
+        "x-tag"
+        "vannilajs"
+    ]
+}
