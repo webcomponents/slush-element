@@ -45,7 +45,7 @@ gulp.task('default', function(done) {
         type: 'list',
         name: 'appBoilerplate',
         message: 'Choose your boilerplate',
-        choices: ['Polymer', 'X-Tag', 'VannilaJS'],
+        choices: ['Polymer', 'X-Tag', 'VanillaJS'],
         default: 'Polymer'
     }];
     //Ask
@@ -63,7 +63,7 @@ gulp.task('default', function(done) {
                 var files = [__dirname + '/templates/polymer-boilerplate/**'];
             } else if (answers.appBoilerplate === 'X-Tag') {
                 var files = [__dirname + '/templates/x-tag-boilerplate/**'];
-            } else if (answers.appBoilerplate === 'VannilaJS') {
+            } else if (answers.appBoilerplate === 'VanillaJS') {
                 var files = [__dirname + '/templates/vanillajs-boilerplate/**'];
             } else {
                 var files = [__dirname + '/templates/polymer-boilerplate/**'];

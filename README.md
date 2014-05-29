@@ -1,6 +1,6 @@
 # slush-custom-element 
 
-> A generator of custom elements with Polymer, X-Tag or VannilaJS
+A generator of custom elements with Polymer, X-Tag or VannilaJS
 
 
 ## Getting Started
