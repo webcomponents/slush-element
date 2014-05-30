@@ -16,19 +16,41 @@ var gulp = require('gulp'),
     _ = require('underscore.string'),
     inquirer = require('inquirer');
 
+var isTrue = function(v){
+    return v === true || v === "true" || v === "y" || v === "yes" ? true : false;
+}
+
 gulp.task('default', function(done) {
     var prompts = [{
+        type: 'list',
+        name: 'appBoilerplate',
+        message: 'What do you want to use?',
+        choices: ['Polymer', 'X-Tag', 'VanillaJS'],
+        default: 'Polymer'
+    }, {
+        name: 'appUserName',
+        message: "What's your GitHub username?",
+        default: 'github-username'
+    }, {
         name: 'appName',
-        message: 'What is the name of your custom element?',
-        default: 'x-custom-element'
+        message: "What's the name of your web component?",
+        default: 'my-element'
     }, {
         name: 'appDescription',
-        message: 'What is the description?',
-        default: 'My custom element is cool.'
+        message: 'How would you describe the web component?',
+        default: 'My awesome web component.'
     }, {
         name: 'appVersion',
-        message: 'What is the version of your custom element?',
+        message: 'What is the version of your web component?',
         default: '0.1.0'
+    }, {
+        name: 'appLifeCycles',
+        message: 'Do you want to include lifecycle callbacks?',
+        default: true
+    }, {
+        name: 'appGulp',
+        message: 'Do you want to include some useful Gulp tasks? ',
+        default: true
     }, {
         name: 'appAuthorName',
         message: 'What is the author name?',
@@ -37,16 +59,6 @@ gulp.task('default', function(done) {
         name: 'appAuthorEmail',
         message: 'What is the author email?',
         default: 'yourname@website.com'
-    }, {
-        name: 'appUserName',
-        message: 'What is the github username?',
-        default: 'github-username'
-    }, {
-        type: 'list',
-        name: 'appBoilerplate',
-        message: 'Choose your boilerplate',
-        choices: ['Polymer', 'X-Tag', 'VanillaJS'],
-        default: 'Polymer'
     }];
     //Ask
     inquirer.prompt(prompts,
@@ -68,11 +80,19 @@ gulp.task('default', function(done) {
             } else {
                 var files = [__dirname + '/templates/polymer-boilerplate/**'];
             }
+
+            if (isTrue(answers.appGulp)) {
+                files.push(__dirname + '/templates/gulpfile.js');
+            }
+            files.push(__dirname + '/templates/package.json');
             gulp.src(files)
                 .pipe(template(answers))
                 .pipe(rename(function(file) {
                     if (file.basename[0] === '@') {
                         file.basename = '.' + file.basename.slice(1);
+                    }
+                    if (file.basename === 'my-element') {
+                        file.basename = _.slugify(answers.appName);
                     }
                 }))
                 .pipe(conflict('./'))

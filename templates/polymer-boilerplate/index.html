@@ -2,18 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>&lt;my-repo&gt;</title>
+    <title>&lt;<%= appName %>&gt;</title>
 
     <!-- Importing Web Component's Polyfill -->
     <script src="bower_components/platform/platform.js"></script>
 
     <!-- Importing Custom Elements -->
-    <link rel="import" href="src/my-element.html">
+    <link rel="import" href="src/<%= appName %>.html">
 </head>
 <body>
 
     <!-- Using Custom Elements -->
-    <my-element></my-element>
+    <<%= appName %>></<%= appName %>>
 
 </body>
 </html>

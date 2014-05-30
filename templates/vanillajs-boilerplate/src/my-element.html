@@ -2,7 +2,7 @@
 (function() {
     // Creates an object based in the HTML Element prototype
     var element = Object.create(HTMLElement.prototype);
-
+    <% if (appLifeCycles == true) { %>
     // Fires when an instance of the element is created
     element.createdCallback = function() {};
 
@@ -13,9 +13,9 @@
     element.detachedCallback = function() {};
 
     // Fires when an attribute was added, removed, or updated
-    element.attributeChangedCallback = function(attr, oldVal, newVal) {};
+    element.attributeChangedCallback = function(attr, oldVal, newVal) {};<% } %>
 
-    document.registerElement('my-element', {
+    document.registerElement('<%= appName %>', {
         prototype: element
     });
 }());

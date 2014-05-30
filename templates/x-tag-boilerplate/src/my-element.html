@@ -3,7 +3,7 @@
 
 <script>
 (function() {
-    xtag.register('my-element', {
+    xtag.register('<%= appName %>', {<% if (appLifeCycles == true) { %>
         lifecycle: {
             // Fires when an instance of the element is created
             created: function() {},
@@ -16,7 +16,7 @@
 
             // Fires when an attribute was added, removed, or updated
             attributeChanged: function(attr, oldVal, newVal) {}
-        },
+        },<% } %>
         events: {},
         accessors: {},
         methods: {}
