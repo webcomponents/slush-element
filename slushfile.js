@@ -23,76 +23,78 @@ var isTrue = function(v){
 gulp.task('default', function(done) {
     var prompts = [{
         type: 'list',
-        name: 'appBoilerplate',
-        message: 'What do you want to use?',
+        name: 'boilerplate',
+        message: '[?] What do you want to use?',
         choices: ['Polymer', 'X-Tag', 'VanillaJS'],
         default: 'Polymer'
     }, {
-        name: 'appUserName',
-        message: "What's your GitHub username?",
-        default: 'github-username'
+        name: 'repository',
+        message: "[?] What's the GitHub repository?",
+        default: 'your-repo'
     }, {
-        name: 'appName',
-        message: "What's the name of your web component?",
+        name: 'username',
+        message: "[?] What's your GitHub username?",
+        default: 'your-github-username'
+    }, {
+        name: 'element',
+        message: "[?] What's the name of your element?",
         default: 'my-element'
     }, {
-        name: 'appDescription',
-        message: 'How would you describe the web component?',
-        default: 'My awesome web component.'
+        name: 'elementDescription',
+        message: "[?] How would you describe the element?",
+        default: 'My awesome Custom Element'
     }, {
-        name: 'appVersion',
-        message: 'What is the version of your web component?',
-        default: '0.1.0'
-    }, {
-        name: 'appLifeCycles',
-        message: 'Do you want to include lifecycle callbacks?',
+        name: 'addLifeCycles',
+        message: "[?] Do you want to include lifecycle callbacks?",
         default: true
     }, {
-        name: 'appGulp',
-        message: 'Do you want to include some useful Gulp tasks? ',
+        name: 'addGulpTasks',
+        message: "[?] Do you want to include some useful Gulp tasks?",
         default: true
     }, {
-        name: 'appAuthorName',
-        message: 'What is the author name?',
-        default: 'Your Name'
+       name: 'version',
+       message: 'What is the version of your web component?',
+       default: '0.1.0'
     }, {
-        name: 'appAuthorEmail',
-        message: 'What is the author email?',
-        default: 'yourname@website.com'
+       name: 'elementAuthorName',
+       message: 'What is the author name?',
+       default: 'Your Name'
+    }, {
+       name: 'elementAuthorEmail',
+       message: 'What is the author email?',
+       default: 'yourname@website.com'
     }];
+
     //Ask
     inquirer.prompt(prompts,
         function(answers) {
-            if (!answers.appName) {
-                return done();
-            }
-            answers.appNameSlug = _.slugify(answers.appName)
-            var d = new Date();
-            answers.year = d.getFullYear();
-            answers.date = d.getFullYear() + '-' + d.getMonth() + '-' + d.getDate();
+            var files = [];
 
-            if (answers.appBoilerplate === 'Polymer') {
-                var files = [__dirname + '/templates/polymer-boilerplate/**'];
-            } else if (answers.appBoilerplate === 'X-Tag') {
-                var files = [__dirname + '/templates/x-tag-boilerplate/**'];
-            } else if (answers.appBoilerplate === 'VanillaJS') {
-                var files = [__dirname + '/templates/vanillajs-boilerplate/**'];
+            files.push(__dirname + '/templates/_editorconfig');
+            files.push(__dirname + '/templates/_gitignore');
+            files.push(__dirname + '/templates/package.json');
+
+            if (answers.boilerplate === 'Polymer') {
+                files.push(__dirname + '/templates/polymer-boilerplate/**');
+            } else if (answers.boilerplate === 'X-Tag') {
+                files.push(__dirname + '/templates/x-tag-boilerplate/**');
+            } else if (answers.boilerplate === 'VanillaJS') {
+                files.push(__dirname + '/templates/vanillajs-boilerplate/**');
             } else {
-                var files = [__dirname + '/templates/polymer-boilerplate/**'];
+                files.push(__dirname + '/templates/polymer-boilerplate/**');
             }
 
-            if (isTrue(answers.appGulp)) {
+            if (isTrue(answers.addGulpTasks)) {
                 files.push(__dirname + '/templates/gulpfile.js');
             }
-            files.push(__dirname + '/templates/package.json');
             gulp.src(files)
                 .pipe(template(answers))
                 .pipe(rename(function(file) {
-                    if (file.basename[0] === '@') {
+                    if (file.basename[0] === '_') {
                         file.basename = '.' + file.basename.slice(1);
                     }
                     if (file.basename === 'my-element') {
-                        file.basename = _.slugify(answers.appName);
+                        file.basename = _.slugify(answers.element);
                     }
                 }))
                 .pipe(conflict('./'))

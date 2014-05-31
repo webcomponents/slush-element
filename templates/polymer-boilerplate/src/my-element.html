@@ -2,10 +2,10 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <!-- Define your custom element -->
-<polymer-element name="<%= appName %>">
+<polymer-element name="<%= element %>">
 
     <script>
-        Polymer('<%= appName %>', {<% if (appLifeCycles == true) { %>
+        Polymer('<%= element %>', {<% if (addLifeCycles == true) { %>
             // Fires when the "<polymer-element>" has been fully prepared
             ready: function() {},
 
