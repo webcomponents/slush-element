@@ -1,6 +1,6 @@
 # Slush Generator<br> for Custom Elements<br>
 
-[![NPM version](https://badge.fury.io/js/generator-element.svg)](http://badge.fury.io/js/generator-element) [![Dependency Status](https://david-dm.org/webcomponents/generator-element.svg?theme=shields.io)](https://david-dm.org/webcomponents/generator-element)
+[![NPM version](https://badge.fury.io/js/slush-custom-element.svg)](http://badge.fury.io/js/slush-custom-element) [![Dependency Status](https://david-dm.org/obetomuniz/slush-custom-element.svg?theme=shields.io)](https://david-dm.org/obetomuniz/slush-custom-element)
 
 > A Slush Generator that provides a functional boilerplate to easily create Custom Elements using [Polymer](http://www.polymer-project.org/), [X-Tag](http://x-tags.org/) or [VanillaJS](http://vanilla-js.com/).
 
@@ -53,7 +53,8 @@ $ slush custom-element
 ├── index.html
 ├── node_modules/
 ├── gulpfile.js
-└── src/my-element.html
+├── src/my-element.html
+└── README.md
     ```
 
 > _**Note**: files will be generated in the current directory, so be sure to change to a new directory before running those commands if you don't want to overwrite existing files._
