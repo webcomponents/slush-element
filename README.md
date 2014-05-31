@@ -1,50 +1,70 @@
-# slush-custom-element 
+# Slush Generator<br> for Custom Elements<br>
 
-A generator of custom elements with Polymer, X-Tag or VannilaJS
+[![NPM version](https://badge.fury.io/js/generator-element.svg)](http://badge.fury.io/js/generator-element) [![Dependency Status](https://david-dm.org/webcomponents/generator-element.svg?theme=shields.io)](https://david-dm.org/webcomponents/generator-element)
 
+> A Slush Generator that provides a functional boilerplate to easily create Custom Elements using [Polymer](http://www.polymer-project.org/), [X-Tag](http://x-tags.org/) or [VanillaJS](http://vanilla-js.com/).
+
+> All templates are based in the boilerplates authored by the [WebComponent.org team](https://github.com/webcomponents/):
+
+> * [Polymer Boilerplate](https://github.com/webcomponents/polymer-boilerplate)
+> * [X-Tag Boilerplate](https://github.com/webcomponents/x-tag-boilerplate)
+> * [VanillaJS Boilerplate](https://github.com/webcomponents/element-boilerplate)
+
+## Install
+
+Install this generator using NPM:
+
+```sh
+$ [sudo] npm install -g slush-custom-element
+```
 
 ## Getting Started
 
-### Installation
+There are two different generators available.
 
-Install `slush-custom-element` globally:
+* The first one used to scaffold out new **individual elements**:
 
-```bash
-$ npm install -g slush-custom-element
-```
+    ```sh
+$ slush custom-element
+    ```
 
-## Getting To Know Slush
+    ```
+[?] What do you want to use?
+[?] What's your GitHub username?
+[?] What's the name of your element?
+[?] How would you describe the element?
+[?] Do you want to include lifecycle callbacks?
+[?] Do you want to include some useful Gulp tasks?
+[?] What is the author name?
+[?] What is the author email?
+    ```
 
-Slush is a tool that uses Gulp for project scaffolding.
+    Which will generate the following project structure with npm and bower dependencies installed:
 
-Slush does not contain anything "out of the box", except the ability to locate installed slush generators and to run them with liftoff.
+    ```
+.
+├── .editorconfig
+├── .gitignore
+├── bower.json
+├── bower_components/
+├── package.json
+├── index.html
+├── node_modules/
+├── gulpfile.js
+└── src/my-element.html
+    ```
 
-To find out more about Slush, check out the [documentation](https://github.com/klei/slush).
+> _**Note**: files will be generated in the current directory, so be sure to change to a new directory before running those commands if you don't want to overwrite existing files._
 
-## License 
+## Contributing
 
-The MIT License
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
 
-Copyright (c) 2014, Beto Muniz
 
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
+## License
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-
+[MIT License](http://webcomponentsorg.mit-license.org/) © WebComponents.org
