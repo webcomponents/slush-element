@@ -30,11 +30,13 @@ $ slush custom-element
 
     ```
 [?] What do you want to use?
+[?] What's the GitHub repository?
 [?] What's your GitHub username?
 [?] What's the name of your element?
 [?] How would you describe the element?
 [?] Do you want to include lifecycle callbacks?
 [?] Do you want to include some useful Gulp tasks?
+[?] What is the version of your web component?
 [?] What is the author name?
 [?] What is the author email?
     ```

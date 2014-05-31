@@ -24,32 +24,32 @@ gulp.task('default', function(done) {
     var prompts = [{
         type: 'list',
         name: 'boilerplate',
-        message: '[?] What do you want to use?',
+        message: 'What do you want to use?',
         choices: ['Polymer', 'X-Tag', 'VanillaJS'],
         default: 'Polymer'
     }, {
         name: 'repository',
-        message: "[?] What's the GitHub repository?",
+        message: "What's the GitHub repository?",
         default: 'your-repo'
     }, {
         name: 'username',
-        message: "[?] What's your GitHub username?",
+        message: "What's your GitHub username?",
         default: 'your-github-username'
     }, {
         name: 'element',
-        message: "[?] What's the name of your element?",
+        message: "What's the name of your element?",
         default: 'my-element'
     }, {
         name: 'elementDescription',
-        message: "[?] How would you describe the element?",
+        message: "How would you describe the element?",
         default: 'My awesome Custom Element'
     }, {
         name: 'addLifeCycles',
-        message: "[?] Do you want to include lifecycle callbacks?",
+        message: "Do you want to include lifecycle callbacks?",
         default: true
     }, {
         name: 'addGulpTasks',
-        message: "[?] Do you want to include some useful Gulp tasks?",
+        message: "Do you want to include some useful Gulp tasks?",
         default: true
     }, {
        name: 'version',
