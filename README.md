@@ -30,15 +30,40 @@ $ slush custom-element
 
     ```
 [?] What do you want to use?
+[?] What's the name of your element?
+[?] Do you want to include lifecycle callbacks?
+    ```
+
+    Which will generate the following file::
+
+    ```
+.
+├── .editorconfig
+├── .gitignore
+├── bower.json
+├── bower_components/
+├── package.json
+├── index.html
+├── node_modules/
+├── gulpfile.js
+├── src/my-element.html
+└── README.md
+    ```
+
+* The second one is used to scaffold an **entire project**:
+
+    ```sh
+$ slush custom-element:repo
+    ```
+
+    ```
+[?] What do you want to use?
 [?] What's the GitHub repository?
 [?] What's your GitHub username?
 [?] What's the name of your element?
 [?] How would you describe the element?
 [?] Do you want to include lifecycle callbacks?
 [?] Do you want to include some useful Gulp tasks?
-[?] What is the version of your web component?
-[?] What is the author name?
-[?] What is the author email?
     ```
 
     Which will generate the following project structure with npm and bower dependencies installed:
