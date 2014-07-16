@@ -1,6 +1,6 @@
 {
     "name": "<%= repository %>",
-    "version": "<%= version %>",
+    "version": "0.0.0",
     "description": "<%= elementDescription %>",
     "license": "MIT",
     "main": "src/<%= element %>.html",
@@ -13,6 +13,6 @@
         "bower_components"
     ],
     "dependencies": {
-        "platform": "Polymer/platform#~0.2.4"
+        "platform": "Polymer/platform#~0.3.3"
     }
 }

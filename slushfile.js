@@ -17,10 +17,69 @@ var gulp = require('gulp'),
     inquirer = require('inquirer');
 
 var isTrue = function(v){
-    return v === true || v === "true" || v === "y" || v === "yes" ? true : false;
+    return v === true || v === "true" || v === "y" || v === "yes" || v === "Y" || v === "Yes" ? true : false;
 }
 
+// Default Task
 gulp.task('default', function(done) {
+    var prompts = [{
+        type: 'list',
+        name: 'boilerplate',
+        message: 'What do you want to use?',
+        choices: ['Polymer', 'X-Tag', 'VanillaJS'],
+        default: 'Polymer'
+    }, {
+        name: 'element',
+        message: "What's the name of your element?",
+        default: 'my-element'
+    }, {
+        name: 'addLifeCycles',
+        message: "Do you want to include lifecycle callbacks?",
+        default: "Yes"
+    }];
+
+    //Ask
+    inquirer.prompt(prompts,
+        function(answers) {
+            var files = [];
+
+            if (answers.boilerplate === 'Polymer') {
+                files.push(__dirname + '/templates/polymer-boilerplate/src/**');
+            } else if (answers.boilerplate === 'X-Tag') {
+                files.push(__dirname + '/templates/x-tag-boilerplate/src/**');
+            } else if (answers.boilerplate === 'VanillaJS') {
+                files.push(__dirname + '/templates/vanillajs-boilerplate/src/**');
+            } else {
+                files.push(__dirname + '/templates/polymer-boilerplate/src/**');
+            }
+
+            answers.addGulpTasks = false;
+
+            if (isTrue(answers.addLifeCycles)) {
+                answers.addLifeCycles = true;
+            }
+
+            gulp.src(files)
+                .pipe(template(answers))
+                .pipe(rename(function(file) {
+                    if (file.basename[0] === '_') {
+                        file.basename = '.' + file.basename.slice(1);
+                    }
+                    if (file.basename === 'my-element') {
+                        file.basename = _.slugify(answers.element);
+                    }
+                }))
+                .pipe(conflict('./'))
+                .pipe(gulp.dest('./'))
+                .pipe(install())
+                .on('end', function() {
+                    done();
+                });
+        });
+});
+
+// Repo task
+gulp.task('repo', function(done) {
     var prompts = [{
         type: 'list',
         name: 'boilerplate',
@@ -30,11 +89,11 @@ gulp.task('default', function(done) {
     }, {
         name: 'repository',
         message: "What's the GitHub repository?",
-        default: 'your-repo'
+        default: 'my-repo'
     }, {
         name: 'username',
         message: "What's your GitHub username?",
-        default: 'your-github-username'
+        default: 'my-user'
     }, {
         name: 'element',
         message: "What's the name of your element?",
@@ -46,23 +105,11 @@ gulp.task('default', function(done) {
     }, {
         name: 'addLifeCycles',
         message: "Do you want to include lifecycle callbacks?",
-        default: true
+        default: "Yes"
     }, {
         name: 'addGulpTasks',
         message: "Do you want to include some useful Gulp tasks?",
-        default: true
-    }, {
-       name: 'version',
-       message: 'What is the version of your web component?',
-       default: '0.1.0'
-    }, {
-       name: 'elementAuthorName',
-       message: 'What is the author name?',
-       default: 'Your Name'
-    }, {
-       name: 'elementAuthorEmail',
-       message: 'What is the author email?',
-       default: 'yourname@website.com'
+        default: "Yes"
     }];
 
     //Ask
@@ -82,6 +129,14 @@ gulp.task('default', function(done) {
                 files.push(__dirname + '/templates/vanillajs-boilerplate/**');
             } else {
                 files.push(__dirname + '/templates/polymer-boilerplate/**');
+            }
+
+            if (isTrue(answers.addGulpTasks)) {
+                answers.addGulpTasks = true;
+            }
+
+            if (isTrue(answers.addLifeCycles)) {
+                answers.addLifeCycles = true;
             }
 
             if (isTrue(answers.addGulpTasks)) {

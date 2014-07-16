@@ -1,22 +1,8 @@
 {
-    "name": "<%= repository %>",
-    "description": "<%= elementDescription %>",
-    "version": "<%= version %>",
-    "homepage": "https://github.com/<%= username %>/<%= repository %>",
-    "author": {
-        "name": "<%= elementAuthorName %>",
-        "email": "<%= elementAuthorEmail %>"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/<%= username %>/<%= repository %>.git"
-    },<% if (addGulpTasks == true) { %>
+    "private": true<% if (addGulpTasks == true) { %>,
     "devDependencies": {
         "gulp": "^3.6.2",<% if (boilerplate != "VanillaJS") { %>
         "gulp-replace": "^0.3.0",<% } %>
         "gulp-connect-multi": "^1.0.8"
-    },<% } %>
-    "bugs": {
-        "url": "https://github.com/<%= username %>/<%= repository %>/issues"
-    }
+    }<% } %>
 }
