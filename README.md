@@ -43,16 +43,7 @@ $ slush custom-element
 
     ```
 .
-├── .editorconfig
-├── .gitignore
-├── bower.json
-├── bower_components/
-├── package.json
-├── index.html
-├── node_modules/
-├── gulpfile.js
-├── src/my-element.html
-└── README.md
+└── my-element.html
     ```
 
 * The second one is used to scaffold an **entire project**:
