@@ -1,8 +1,10 @@
 # &lt;<%= repository %>&gt;
 
-> A bare minimum custom element starter-kit using [X-Tag](http://x-tags.org/).
->
-> Looking for a working example? Check [hello-world-xtag](https://github.com/webcomponents/hello-world-xtag).
+> <%= elementDescription %>
+
+## Demo
+
+[Check it live!](http://<%= username %>.github.io/<%= repository %>)
 
 ## Install
 
@@ -25,13 +27,13 @@ Or [download as ZIP](https://github.com/<%= username %>/<%= repository %>/archiv
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="bower_components/<%= repository %>/dist/<%= element %>.html">
+    <link rel="import" href="bower_components/<%= repository %>/dist/<%= element%>.html">
     ```
 
 3. Start using it!
 
     ```html
-    <<%= element %>></<%= element %>>
+    <<%= element%>></<%= element%>>
     ```
 
 ## Options
@@ -80,12 +82,18 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
     $ gulp build
     ```
 
+* To provide a live demo, send everything to `gh-pages` branch.
+
+    ```sh
+    $ gulp deploy
+    ```
+
 ## Contributing
 
 1. Fork it!
-2. Create your feature branch: `git checkout -b new-feature`
+2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin new-feature`
+4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
 ## History

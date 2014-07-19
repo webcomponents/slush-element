@@ -33,15 +33,15 @@ gulp.task('server', connect.server({
   livereload: true
 }));
 <% if (boilerplate != "VanillaJS") { %>
-gulp.task('build', function(){
+gulp.task('build', ['beforebuild'],function(){
   build()
 });<% } %>
-gulp.task('beforedeploy', function(){
+gulp.task('beforebuild', function(){
   copy()
   ignore()
 });
 
-gulp.task('deploy', ['beforedeploy'], function () {
+gulp.task('deploy', ['beforebuild'], function () {
 
   ghpages.publish(path.join(__dirname, '.tmp/'), {
       clone: 'bower_components/<%= repository %>',
@@ -52,7 +52,7 @@ gulp.task('deploy', ['beforedeploy'], function () {
 
     console.log("");
     if(err.errno == 34){
-      console.log("Error: You need run 'gulp beforedeploy' before deploy your custom element in gh-pages.\n");
+      console.log("Error: You need run 'gulp build' before deploy your custom element in gh-pages.\n");
     } else if(typeof err.errno == "undefined"){
       console.log("Error: You need add a remote repository before deploy your custom element in gh-pages.\n");
     }

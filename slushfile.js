@@ -120,6 +120,7 @@ gulp.task('repo', function(done) {
             files.push(__dirname + '/templates/_editorconfig');
             files.push(__dirname + '/templates/_gitignore');
             files.push(__dirname + '/templates/package.json');
+            files.push(__dirname + '/templates/README.md');
 
             if (answers.boilerplate === 'Polymer') {
                 files.push(__dirname + '/templates/polymer-boilerplate/**');

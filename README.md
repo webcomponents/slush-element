@@ -2,6 +2,13 @@
 
 [![NPM version](https://badge.fury.io/js/slush-custom-element.svg)](http://badge.fury.io/js/slush-custom-element) [![Dependency Status](https://david-dm.org/obetomuniz/slush-custom-element.svg?theme=shields.io)](https://david-dm.org/obetomuniz/slush-custom-element)
 
+
+[![NPM version](http://img.shields.io/npm/v/slush-custom-element.svg?style=flat)](http://npmjs.org/slush-custom-element)
+[![NPM downloads](http://img.shields.io/npm/dm/slush-custom-element.svg?style=flat)](http://npmjs.org/slush-custom-element)
+[![Build Status](http://img.shields.io/travis/obetomuniz/slush-custom-element/master.svg?style=flat)](https://travis-ci.org/obetomuniz/slush-custom-element)
+[![Dependency Status](http://img.shields.io/david/obetomuniz/slush-custom-element.svg?style=flat)](https://david-dm.org/obetomuniz/slush-custom-element)
+
+
 > A Slush Generator that provides a functional boilerplate to easily create Custom Elements using [Polymer](http://www.polymer-project.org/), [X-Tag](http://x-tags.org/) or [VanillaJS](http://vanilla-js.com/).
 
 > All templates are based in the boilerplates authored by the [WebComponent.org team](https://github.com/webcomponents/):
