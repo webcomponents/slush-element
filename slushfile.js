@@ -119,7 +119,6 @@ gulp.task('repo', function(done) {
 
             files.push(__dirname + '/templates/_editorconfig');
             files.push(__dirname + '/templates/_gitignore');
-            files.push(__dirname + '/templates/package.json');
             files.push(__dirname + '/templates/README.md');
 
             if (answers.boilerplate === 'Polymer') {
@@ -134,6 +133,7 @@ gulp.task('repo', function(done) {
 
             if (isTrue(answers.addGulpTasks)) {
                 answers.addGulpTasks = true;
+                files.push(__dirname + '/templates/package.json');
             }
 
             if (isTrue(answers.addLifeCycles)) {
