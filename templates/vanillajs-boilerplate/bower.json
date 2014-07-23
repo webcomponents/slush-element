@@ -1,9 +1,9 @@
 {
-    "name": "<%= repository %>",
+    "name": "<%= githubRepository %>",
     "version": "0.0.0",
     "description": "<%= elementDescription %>",
     "license": "MIT",
-    "main": "src/<%= element %>.html",
+    "main": "src/<%= elementName %>.html",
     "keywords": [
         "web-components"
     ],

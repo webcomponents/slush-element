@@ -15,7 +15,7 @@
     // Fires when an attribute was added, removed, or updated
     element.attributeChangedCallback = function(attr, oldVal, newVal) {};<% } %>
 
-    document.registerElement('<%= element %>', {
+    document.registerElement('<%= elementName %>', {
         prototype: element
     });
 }());

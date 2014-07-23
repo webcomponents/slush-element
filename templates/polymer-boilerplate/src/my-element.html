@@ -2,10 +2,10 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
 <!-- Define your custom element -->
-<polymer-element name="<%= element %>">
+<polymer-element name="<%= elementName %>">
 
     <script>
-        Polymer('<%= element %>', {<% if (addLifeCycles == true) { %>
+        Polymer('<%= elementName %>', {<% if (addLifeCycles == true) { %>
             // Fires when an instance of the element is created
             created: function() {},
 

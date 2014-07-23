@@ -2,18 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>&lt;<%= element %>&gt;</title>
+    <title>&lt;<%= elementName %>&gt;</title>
 
     <!-- Importing Web Component's Polyfill -->
     <script src="bower_components/platform/platform.js"></script>
 
     <!-- Importing Custom Elements -->
-    <link rel="import" href="src/<%= element %>.html">
+    <link rel="import" href="src/<%= elementName %>.html">
 </head>
 <body>
 
     <!-- Using Custom Elements -->
-    <<%= element %>></<%= element %>>
+    <<%= elementName %>></<%= elementName %>>
 
 </body>
 </html>

@@ -1,20 +1,20 @@
-# &lt;<%= repository %>&gt;
+# &lt;<%= githubRepository %>&gt;
 
 > <%= elementDescription %>
 
 ## Demo
 
-[Check it live!](http://<%= username %>.github.io/<%= repository %>)
+[Check it live!](http://<%= username %>.github.io/<%= githubRepository %>)
 
 ## Install
 
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install <%= repository %> --save
+$ bower install <%= githubRepository %> --save
 ```
 
-Or [download as ZIP](https://github.com/<%= username %>/<%= repository %>/archive/master.zip).
+Or [download as ZIP](https://github.com/<%= username %>/<%= githubRepository %>/archive/master.zip).
 
 ## Usage
 
@@ -27,13 +27,13 @@ Or [download as ZIP](https://github.com/<%= username %>/<%= repository %>/archiv
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="bower_components/<%= repository %>/dist/<%= element%>.html">
+    <link rel="import" href="bower_components/<%= githubRepository %>/dist/<%= elementName %>.html">
     ```
 
 3. Start using it!
 
     ```html
-    <<%= element%>></<%= element%>>
+    <<%= elementName %>></<%= elementName %>>
     ```
 
 ## Options
@@ -98,7 +98,7 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
 
 ## History
 
-For detailed changelog, check [Releases](https://github.com/<%= username %>/<%= repository %>/releases).
+For detailed changelog, check [Releases](https://github.com/<%= username %>/<%= githubRepository %>/releases).
 
 ## License
 

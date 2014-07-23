@@ -23,7 +23,7 @@ var build = function (){
     .pipe(gulp.dest('dist/'));
 }<% } %>
 var ignore = function (){
-  gulp.src(['./.tmp/bower_components/<%= repository %>'])
+  gulp.src(['./.tmp/bower_components/<%= githubRepository %>'])
     .pipe(clean());
 }
 
@@ -44,7 +44,7 @@ gulp.task('beforebuild', function(){
 gulp.task('deploy', ['beforebuild'], function () {
 
   ghpages.publish(path.join(__dirname, '.tmp/'), {
-      clone: 'bower_components/<%= repository %>',
+      clone: 'bower_components/<%= githubRepository %>',
       logger: function(message) {
         console.log(message);
       }

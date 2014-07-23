@@ -15,7 +15,7 @@ var isTrue = function(v){
 /* ==========================================================================
    Default task
    ========================================================================== */
-   
+
 gulp.task('default', function(done) {
     var prompts = [{
         type: 'list',
@@ -24,7 +24,7 @@ gulp.task('default', function(done) {
         choices: ['Polymer', 'X-Tag', 'VanillaJS'],
         default: 'Polymer'
     }, {
-        name: 'element',
+        name: 'elementName',
         message: "What's the name of your element?",
         default: 'my-element'
     }, {
@@ -61,7 +61,7 @@ gulp.task('default', function(done) {
                     file.basename = '.' + file.basename.slice(1);
                 }
                 if (file.basename === 'my-element') {
-                    file.basename = _.slugify(answers.element);
+                    file.basename = _.slugify(answers.elementName);
                 }
             }))
             .pipe(conflict('./'))
@@ -76,7 +76,7 @@ gulp.task('default', function(done) {
 /* ==========================================================================
    Repo task
    ========================================================================== */
-   
+
 gulp.task('repo', function(done) {
     var prompts = [{
         type: 'list',
@@ -85,7 +85,7 @@ gulp.task('repo', function(done) {
         choices: ['Polymer', 'X-Tag', 'VanillaJS'],
         default: 'Polymer'
     }, {
-        name: 'repository',
+        name: 'githubRepository',
         message: "What's the GitHub repository?",
         default: 'my-repo'
     }, {
@@ -93,7 +93,7 @@ gulp.task('repo', function(done) {
         message: "What's your GitHub username?",
         default: 'my-user'
     }, {
-        name: 'element',
+        name: 'elementName',
         message: "What's the name of your element?",
         default: 'my-element'
     }, {
@@ -141,7 +141,7 @@ gulp.task('repo', function(done) {
         if (isTrue(answers.addGulpTasks)) {
             files.push(__dirname + '/templates/gulpfile.js');
         }
-        
+
         gulp.src(files)
             .pipe(template(answers))
             .pipe(rename(function(file) {
@@ -149,7 +149,7 @@ gulp.task('repo', function(done) {
                     file.basename = '.' + file.basename.slice(1);
                 }
                 if (file.basename === 'my-element') {
-                    file.basename = _.slugify(answers.element);
+                    file.basename = _.slugify(answers.elementName);
                 }
             }))
             .pipe(conflict('./'))
