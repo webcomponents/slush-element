@@ -1,9 +1,9 @@
 # Slush Generator<br> for Custom Elements<br>
 
-[![NPM version](http://img.shields.io/npm/v/slush-custom-element.svg?style=flat)](http://npmjs.org/slush-custom-element)
-[![NPM downloads](http://img.shields.io/npm/dm/slush-custom-element.svg?style=flat)](http://npmjs.org/slush-custom-element)
-[![Build Status](http://img.shields.io/travis/obetomuniz/slush-custom-element/master.svg?style=flat)](https://travis-ci.org/obetomuniz/slush-custom-element)
-[![Dependency Status](http://img.shields.io/david/obetomuniz/slush-custom-element.svg?style=flat)](https://david-dm.org/obetomuniz/slush-custom-element)
+[![NPM version](http://img.shields.io/npm/v/slush-element.svg?style=flat)](http://npmjs.org/slush-element)
+[![NPM downloads](http://img.shields.io/npm/dm/slush-element.svg?style=flat)](http://npmjs.org/slush-element)
+[![Build Status](http://img.shields.io/travis/obetomuniz/slush-element/master.svg?style=flat)](https://travis-ci.org/obetomuniz/slush-element)
+[![Dependency Status](http://img.shields.io/david/obetomuniz/slush-element.svg?style=flat)](https://david-dm.org/obetomuniz/slush-element)
 
 ![Web Components + Slush](https://cloud.githubusercontent.com/assets/1680157/3633653/b7ba9750-0eed-11e4-848f-3d4eb7e2ea08.png)
 
@@ -20,7 +20,7 @@
 Install this generator using NPM:
 
 ```sh
-$ [sudo] npm install -g slush-custom-element
+$ [sudo] npm install -g slush-element
 ```
 
 ## Getting Started
@@ -30,7 +30,7 @@ There are two different generators available.
 * The first one used to scaffold out new **individual elements**:
 
     ```sh
-$ slush custom-element
+$ slush element
     ```
 
     ```
@@ -49,7 +49,7 @@ $ slush custom-element
 * The second one is used to scaffold an **entire project**:
 
     ```sh
-$ slush custom-element:repo
+$ slush element:repo
     ```
 
     ```
