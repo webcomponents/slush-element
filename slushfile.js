@@ -1,11 +1,3 @@
-/*
- * slush-custom-element
- * https://github.com/obetomuniz/slush-custom-element
- *
- * Copyright (c) 2014, Beto Muniz
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 var gulp = require('gulp'),
@@ -20,7 +12,10 @@ var isTrue = function(v){
     return v === true || v === "true" || v === "y" || v === "yes" || v === "Y" || v === "Yes" ? true : false;
 }
 
-// Default Task
+/* ==========================================================================
+   Default task
+   ========================================================================== */
+   
 gulp.task('default', function(done) {
     var prompts = [{
         type: 'list',
@@ -38,47 +33,50 @@ gulp.task('default', function(done) {
         default: "Yes"
     }];
 
-    //Ask
-    inquirer.prompt(prompts,
-        function(answers) {
-            var files = [];
+    /* Questions
+       ====================================================================== */
+    inquirer.prompt(prompts, function(answers) {
+        var files = [];
 
-            if (answers.boilerplate === 'Polymer') {
-                files.push(__dirname + '/templates/polymer-boilerplate/src/**');
-            } else if (answers.boilerplate === 'X-Tag') {
-                files.push(__dirname + '/templates/x-tag-boilerplate/src/**');
-            } else if (answers.boilerplate === 'VanillaJS') {
-                files.push(__dirname + '/templates/vanillajs-boilerplate/src/**');
-            } else {
-                files.push(__dirname + '/templates/polymer-boilerplate/src/**');
-            }
+        if (answers.boilerplate === 'Polymer') {
+            files.push(__dirname + '/templates/polymer-boilerplate/src/**');
+        } else if (answers.boilerplate === 'X-Tag') {
+            files.push(__dirname + '/templates/x-tag-boilerplate/src/**');
+        } else if (answers.boilerplate === 'VanillaJS') {
+            files.push(__dirname + '/templates/vanillajs-boilerplate/src/**');
+        } else {
+            files.push(__dirname + '/templates/polymer-boilerplate/src/**');
+        }
 
-            answers.addGulpTasks = false;
+        answers.addGulpTasks = false;
 
-            if (isTrue(answers.addLifeCycles)) {
-                answers.addLifeCycles = true;
-            }
+        if (isTrue(answers.addLifeCycles)) {
+            answers.addLifeCycles = true;
+        }
 
-            gulp.src(files)
-                .pipe(template(answers))
-                .pipe(rename(function(file) {
-                    if (file.basename[0] === '_') {
-                        file.basename = '.' + file.basename.slice(1);
-                    }
-                    if (file.basename === 'my-element') {
-                        file.basename = _.slugify(answers.element);
-                    }
-                }))
-                .pipe(conflict('./'))
-                .pipe(gulp.dest('./'))
-                .pipe(install())
-                .on('end', function() {
-                    done();
-                });
-        });
+        gulp.src(files)
+            .pipe(template(answers))
+            .pipe(rename(function(file) {
+                if (file.basename[0] === '_') {
+                    file.basename = '.' + file.basename.slice(1);
+                }
+                if (file.basename === 'my-element') {
+                    file.basename = _.slugify(answers.element);
+                }
+            }))
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'))
+            .pipe(install())
+            .on('end', function() {
+                done();
+            });
+    });
 });
 
-// Repo task
+/* ==========================================================================
+   Repo task
+   ========================================================================== */
+   
 gulp.task('repo', function(done) {
     var prompts = [{
         type: 'list',
@@ -112,52 +110,53 @@ gulp.task('repo', function(done) {
         default: "Yes"
     }];
 
-    //Ask
-    inquirer.prompt(prompts,
-        function(answers) {
-            var files = [];
+    /* Questions
+       ====================================================================== */
+    inquirer.prompt(prompts, function(answers) {
+        var files = [];
 
-            files.push(__dirname + '/templates/_editorconfig');
-            files.push(__dirname + '/templates/_gitignore');
-            files.push(__dirname + '/templates/README.md');
+        files.push(__dirname + '/templates/_editorconfig');
+        files.push(__dirname + '/templates/_gitignore');
+        files.push(__dirname + '/templates/README.md');
 
-            if (answers.boilerplate === 'Polymer') {
-                files.push(__dirname + '/templates/polymer-boilerplate/**');
-            } else if (answers.boilerplate === 'X-Tag') {
-                files.push(__dirname + '/templates/x-tag-boilerplate/**');
-            } else if (answers.boilerplate === 'VanillaJS') {
-                files.push(__dirname + '/templates/vanillajs-boilerplate/**');
-            } else {
-                files.push(__dirname + '/templates/polymer-boilerplate/**');
-            }
+        if (answers.boilerplate === 'Polymer') {
+            files.push(__dirname + '/templates/polymer-boilerplate/**');
+        } else if (answers.boilerplate === 'X-Tag') {
+            files.push(__dirname + '/templates/x-tag-boilerplate/**');
+        } else if (answers.boilerplate === 'VanillaJS') {
+            files.push(__dirname + '/templates/vanillajs-boilerplate/**');
+        } else {
+            files.push(__dirname + '/templates/polymer-boilerplate/**');
+        }
 
-            if (isTrue(answers.addGulpTasks)) {
-                answers.addGulpTasks = true;
-                files.push(__dirname + '/templates/package.json');
-            }
+        if (isTrue(answers.addGulpTasks)) {
+            answers.addGulpTasks = true;
+            files.push(__dirname + '/templates/package.json');
+        }
 
-            if (isTrue(answers.addLifeCycles)) {
-                answers.addLifeCycles = true;
-            }
+        if (isTrue(answers.addLifeCycles)) {
+            answers.addLifeCycles = true;
+        }
 
-            if (isTrue(answers.addGulpTasks)) {
-                files.push(__dirname + '/templates/gulpfile.js');
-            }
-            gulp.src(files)
-                .pipe(template(answers))
-                .pipe(rename(function(file) {
-                    if (file.basename[0] === '_') {
-                        file.basename = '.' + file.basename.slice(1);
-                    }
-                    if (file.basename === 'my-element') {
-                        file.basename = _.slugify(answers.element);
-                    }
-                }))
-                .pipe(conflict('./'))
-                .pipe(gulp.dest('./'))
-                .pipe(install())
-                .on('end', function() {
-                    done();
-                });
-        });
+        if (isTrue(answers.addGulpTasks)) {
+            files.push(__dirname + '/templates/gulpfile.js');
+        }
+        
+        gulp.src(files)
+            .pipe(template(answers))
+            .pipe(rename(function(file) {
+                if (file.basename[0] === '_') {
+                    file.basename = '.' + file.basename.slice(1);
+                }
+                if (file.basename === 'my-element') {
+                    file.basename = _.slugify(answers.element);
+                }
+            }))
+            .pipe(conflict('./'))
+            .pipe(gulp.dest('./'))
+            .pipe(install())
+            .on('end', function() {
+                done();
+            });
+    });
 });
