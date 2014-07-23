@@ -2,8 +2,8 @@
 
 [![NPM version](http://img.shields.io/npm/v/slush-element.svg?style=flat)](http://npmjs.org/slush-element)
 [![NPM downloads](http://img.shields.io/npm/dm/slush-element.svg?style=flat)](http://npmjs.org/slush-element)
-[![Build Status](http://img.shields.io/travis/obetomuniz/slush-element/master.svg?style=flat)](https://travis-ci.org/obetomuniz/slush-element)
-[![Dependency Status](http://img.shields.io/david/obetomuniz/slush-element.svg?style=flat)](https://david-dm.org/obetomuniz/slush-element)
+[![Build Status](http://img.shields.io/travis/webcomponents/slush-element/master.svg?style=flat)](https://travis-ci.org/webcomponents/slush-element)
+[![Dependency Status](http://img.shields.io/david/webcomponents/slush-element.svg?style=flat)](https://david-dm.org/webcomponents/slush-element)
 
 ![Web Components + Slush](https://cloud.githubusercontent.com/assets/1680157/3633653/b7ba9750-0eed-11e4-848f-3d4eb7e2ea08.png)
 
