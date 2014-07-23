@@ -32,10 +32,11 @@
         "slushgenerator",
         "webcomponents",
         "web-components",
+        "web components",
         "custom-elements",
+        "custom elements",
         "polymer",
         "x-tag",
-        "vanillajs",
         "gulp"
     ]
 }
