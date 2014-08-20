@@ -88,6 +88,13 @@ $ slush element:repo
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+## Team
+
+This project is maintained by these people and a bunch of awesome [contributors](https://github.com/webcomponents/generator-element/graphs/contributors).
+
+[![Beto Muniz](https://2.gravatar.com/avatar/fff7258836f20ea66b061b49a51fe8dd)](https://github.com/obetomuniz) | [![Zeno Rocha](https://2.gravatar.com/avatar/e190023b66e2b8aa73a842b106920c93)](https://github.com/zenorocha)
+--- | --- | --- | --- | ---
+[Beto Muniz](https://github.com/obetomuniz) | [Zeno Rocha](https://github.com/zenorocha)
 
 ## License
 
