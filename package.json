@@ -27,7 +27,7 @@
     "gulp-install": "^0.2.0",
     "gulp-rename": "^1.2.0",
     "gulp-template": "^1.0.0",
-    "inquirer": "^0.6.0",
+    "inquirer": "^0.8.0",
     "underscore.string": "^2.3.3"
   },
   "keywords": [
