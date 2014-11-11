@@ -28,7 +28,7 @@ var ignore = function (){
 }
 
 gulp.task('server', connect.server({
-  root: ['./'],
+  root: [__dirname],
   port: 8000,
   livereload: true
 }));
