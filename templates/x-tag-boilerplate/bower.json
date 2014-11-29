@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "description": "<%= elementDescription %>",
     "license": "MIT",
-    "main": "src/<%= elementName %>.html",
+    "main": "dist/<%= elementName %>.html",
     "keywords": [
         "x-tag",
         "web-components"
@@ -14,7 +14,7 @@
         "bower_components"
     ],
     "dependencies": {
-        "webcomponentsjs": "Polymer/webcomponentsjs#^0.5.0",
-        "x-tag-core": "~0.9.5"
+        "x-tag-core": "^1.0.0",
+        "webcomponentsjs": "^0.5.1"
     }
 }
