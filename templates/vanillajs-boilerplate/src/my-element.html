@@ -2,8 +2,8 @@
 (function() {
     // Creates an object based in the HTML Element prototype
     var element = Object.create(HTMLElement.prototype);
-    <% if (addLifeCycles == true) { %>
-    // Fires when an instance of the element is created
+
+    <% if (addLifeCycles == true) { %>// Fires when an instance of the element is created
     element.createdCallback = function() {};
 
     // Fires when an instance was inserted into the document
