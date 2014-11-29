@@ -76,12 +76,12 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
     $ gulp server
     ```
 
-* To build the distribution files before releasing a new version.
+<% if (boilerplate != "VanillaJS") { %>* To build the distribution files before releasing a new version.
 
     ```sh
     $ gulp build
     ```
-
+<% } %>
 * To provide a live demo, send everything to `gh-pages` branch.
 
     ```sh
