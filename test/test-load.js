@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var assert = require('assert');
 
 // Load all slush generator tasks:
 require('../slushfile');
