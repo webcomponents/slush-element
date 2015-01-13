@@ -20,6 +20,9 @@
       "url": "https://github.com/webcomponents/slush-element/blob/master/LICENSE"
     }
   ],
+  "scripts": {
+    "test": "echo \"No tests\""
+  },
   "main": "slushfile.js",
   "dependencies": {
     "gulp": "^3.8.7",
