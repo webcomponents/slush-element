@@ -21,7 +21,7 @@
     }
   ],
   "scripts": {
-    "test": "echo \"No tests\""
+    "test": "mocha --reporter spec"
   },
   "main": "slushfile.js",
   "dependencies": {
@@ -31,6 +31,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-template": "^2.0.0",
     "inquirer": "^0.8.0",
+    "mock-gulp-dest": "^0.1.1",
     "underscore.string": "^2.3.3"
   },
   "keywords": [
@@ -43,5 +44,8 @@
     "polymer",
     "x-tag",
     "gulp"
-  ]
+  ],
+  "devDependencies": {
+    "mocha": "*"
+  }
 }
