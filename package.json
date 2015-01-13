@@ -1,7 +1,7 @@
 {
   "name": "slush-element",
   "description": "A slush generator of custom elements with Polymer, X-Tag or VannilaJS based in generator-element",
-  "version": "0.1.26",
+  "version": "1.0.0",
   "homepage": "https://github.com/webcomponents/slush-element",
   "author": {
     "name": "Beto Muniz",
