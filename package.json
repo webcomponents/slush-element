@@ -31,7 +31,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-template": "^2.0.0",
     "inquirer": "^0.8.0",
-    "underscore.string": "^2.3.3"
+    "underscore.string": "^3.0.2"
   },
   "keywords": [
     "slushgenerator",
