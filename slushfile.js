@@ -35,7 +35,7 @@ gulp.task('default', function(done) {
 
     /* Questions
        ====================================================================== */
-    inquirer.prompt(prompts, function(answers) {
+    inquirer.prompt(prompts).then(function(answers) {
         var files = [];
 
         if (answers.boilerplate === 'Polymer') {
@@ -112,7 +112,7 @@ gulp.task('repo', function(done) {
 
     /* Questions
        ====================================================================== */
-    inquirer.prompt(prompts, function(answers) {
+    inquirer.prompt(prompts).then(function(answers) {
         var files = [];
 
         files.push(__dirname + '/templates/_editorconfig');

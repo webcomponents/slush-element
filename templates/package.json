@@ -2,9 +2,9 @@
     "private": true<% if (addGulpTasks == true) { %>,
     "devDependencies": {
         "gulp": "^3.8.7",<% if (boilerplate != "VanillaJS") { %>
-        "gulp-replace": "^0.4.0",<% } %>
+        "gulp-replace": "^0.5.4",<% } %>
         "gulp-connect-multi": "^1.0.8",
         "gulp-clean": "^0.3.1",
-        "gh-pages": "^0.2.0"
+        "gh-pages": "^0.11.0"
     }<% } %>
 }

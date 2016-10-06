@@ -25,13 +25,14 @@
   },
   "main": "slushfile.js",
   "dependencies": {
-    "gulp": "^3.8.7",
+    "gulp": "3.9.1",
     "gulp-conflict": "^0.4.0",
-    "gulp-install": "^0.4.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-template": "^3.0.0",
-    "inquirer": "^0.8.0",
-    "underscore.string": "^3.0.2"
+    "gulp-install": "0.6.0",
+    "gulp-rename": "1.2.2",
+    "gulp-template": "4.0.0",
+    "inquirer": "1.2.1",
+    "mocha": "3.1.0",
+    "underscore.string": "3.3.4"
   },
   "keywords": [
     "slushgenerator",
