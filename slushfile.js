@@ -69,7 +69,8 @@ gulp.task('default', function(done) {
             .pipe(install())
             .on('end', function() {
                 done();
-            });
+            })
+            .resume();
     });
 });
 
