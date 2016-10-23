@@ -21,7 +21,7 @@
     }
   ],
   "scripts": {
-    "test": "NODE_ENV=test mocha -R spec test/*.js"
+    "test": "NODE_ENV=test mocha -R spec test/*_test.js"
   },
   "main": "slushfile.js",
   "dependencies": {
