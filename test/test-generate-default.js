@@ -53,5 +53,20 @@ describe('default task', function () {
                 done();
             });
         });
+
+        it('with custom element name', done => {
+            mockirer(inquirer, {
+                boilerplate: 'Polymer',
+                elementName: 'polymer-sample'
+            });
+
+            gulp.start('default').once('stop', function () {
+                mockGulpDest.assertDestContains([
+                    'polymer-sample.html'
+                ]);
+                
+                done();
+            });
+        });
     });
 });
