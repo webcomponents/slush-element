@@ -1,9 +1,9 @@
 'use strict';
 
-const gulp = require('gulp');
-const mockGulpDest = require('mock-gulp-dest')(gulp);
-const mockirer = require('mockirer');
-const inquirer = require('inquirer');
+var gulp = require('gulp'),
+    mockGulpDest = require('mock-gulp-dest')(gulp),
+    mockirer = require('mockirer'),
+    inquirer = require('inquirer');
 
 require('../slushfile');
 
