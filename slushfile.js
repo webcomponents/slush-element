@@ -69,7 +69,8 @@ gulp.task('default', function(done) {
             .pipe(install())
             .on('end', function() {
                 done();
-            });
+            })
+            .resume();
     });
 });
 
@@ -132,14 +133,11 @@ gulp.task('repo', function(done) {
         if (isTrue(answers.addGulpTasks)) {
             answers.addGulpTasks = true;
             files.push(__dirname + '/templates/package.json');
+            files.push(__dirname + '/templates/gulpfile.js');
         }
 
         if (isTrue(answers.addLifeCycles)) {
             answers.addLifeCycles = true;
-        }
-
-        if (isTrue(answers.addGulpTasks)) {
-            files.push(__dirname + '/templates/gulpfile.js');
         }
 
         gulp.src(files)
