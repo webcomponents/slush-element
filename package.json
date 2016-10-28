@@ -48,6 +48,6 @@
   "devDependencies": {
     "mocha": "^3.1.0",
     "mock-gulp-dest": "^0.1.1",
-    "mockirer": "^2.0.0"
+    "mockirer": "^2.0.1"
   }
 }
