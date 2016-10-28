@@ -7,12 +7,11 @@ const inquirer = require('inquirer');
 
 require('../slushfile');
 
-
 describe('default task', function () {
     this.timeout(10000); // prevent broken test because running `npm install` after each suite
 
-    describe('should be generated the element file', () => {
-        it('with Polymer boilerplate', done => {
+    describe('should be generated the element file', function () {
+        it('with Polymer boilerplate', function (done) {
             mockirer(inquirer, {
                 boilerplate: 'Polymer'
             });
@@ -26,7 +25,7 @@ describe('default task', function () {
             });
         });
 
-        it('with X-Tag boilerplate', done => {
+        it('with X-Tag boilerplate', function (done) {
             mockirer(inquirer, {
                 boilerplate: 'X-Tag'
             });
@@ -40,7 +39,7 @@ describe('default task', function () {
             });
         });
 
-        it('with VanillaJS boilerplate', done => {
+        it('with VanillaJS boilerplate', function (done) {
             mockirer(inquirer, {
                 boilerplate: 'VanillaJS'
             });
@@ -54,7 +53,7 @@ describe('default task', function () {
             });
         });
 
-        it('with custom element name', done => {
+        it('with custom element name', function (done) {
             mockirer(inquirer, {
                 boilerplate: 'Polymer',
                 elementName: 'polymer-sample'
